@@ -23,6 +23,19 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
+
+	{**
+	 * Transifex Live JavasCript Settings: 'api_key' value.
+	 * See: http://docs.transifex.com/live/api/#setting-up-transifex-live-javascript-code
+	 * *}
+	<script n:if="$config->transifexLive" type="text/javascript">
+		window.liveSettings = {
+			api_key: {$config->transifexLive}
+		};
+	</script>
+
+	<script n:if="$config->transifexLive" type="text/javascript" src="//cdn.transifex.com/live.js"></script>
+
 </head>
 
 <body>
